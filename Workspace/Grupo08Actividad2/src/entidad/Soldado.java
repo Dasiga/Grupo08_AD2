@@ -25,7 +25,13 @@ public class Soldado {
 		if(this.numeroBalas > 0)
 			return true;
 		
-		return false;
+		return false;		
+	}
+	
+	public void disparar(Soldado sol) {
 		
+		this.numeroBalas--;
+		
+		sol.estaMuerto = true;
 	}
 }
