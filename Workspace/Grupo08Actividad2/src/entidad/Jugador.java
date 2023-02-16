@@ -46,6 +46,7 @@ public class Jugador {
 	
 	/**
 	 * Método que permite cambiar el dorsal al jugador por otro o el mismo siempre que sea un valor comprendido entre 1 y 30 (incluidos)
+	 * sino el valor de tu dorsal será -1
 	 * @author diego de silva
 	 * @param dorsal número al que se desea cambiar
 	 */
@@ -68,8 +69,8 @@ public class Jugador {
         if(numeroTarjetasAmarillas == 2)                     
         	expulsado = true;      
 
-        if(numeroTarjetasRojas == 1) 
-                      expulsado = true;        
+        if(numeroTarjetasRojas == 1)                     
+        	expulsado = true;        
         
         return expulsado;
     }    
