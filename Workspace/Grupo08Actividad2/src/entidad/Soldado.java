@@ -1,8 +1,8 @@
 package entidad;
 
 /**
- * Clase que da forma a la entidad <b>Soldado</b> donde podremos saber si la entidad <b>está viva</b>,
- * si <b>puede disparar</b> con la munición que tiene; y permite <b>disparar</b> a otro Soldado
+ * Clase que da forma a la entidad <b>Soldado</b> indicando por sus atributos si está muerta y la cantidad de balas de la que dispone.
+ * y podrá utilizar los métodos de disparar a otro soldado y saber si puede disparar según sus balas.
  * @author diego de silva
  * @version 0.1
  */
