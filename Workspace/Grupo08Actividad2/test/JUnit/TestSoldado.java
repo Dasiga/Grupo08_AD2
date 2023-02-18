@@ -10,6 +10,8 @@ import entidad.Soldado;
 
 class TestSoldado {
 	
+	// Declaramos varias entidades de soldado
+	
 	private Soldado soldado1 = new Soldado();
 	private Soldado soldado2 = new Soldado();
 	private Soldado soldado3 = new Soldado();
@@ -17,9 +19,9 @@ class TestSoldado {
 	
 	@BeforeEach
 	
-	// Inicializamos las propiedadesa sus valores conocidos para realizar cada test.
+	// Inicializamos las propiedades a sus valores conocidos para realizar cada test.
 	
-	public void setup() {
+	public void inicializacion() {
 	
 		soldado1.setEstaMuerto(false);
 		soldado2.setEstaMuerto(false);

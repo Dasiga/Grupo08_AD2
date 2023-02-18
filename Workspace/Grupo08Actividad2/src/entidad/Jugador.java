@@ -1,7 +1,11 @@
 package entidad;
 /**
- * Esta clase define el estado y métodos de la clase Jugador.
+ * Esta clase define el estado y métodos de la clase Jugador así como sus propiedades.
+ * Disponemos de los siguientes métodos:
+ * - ponerDorsal();
+ * - estaExpulsado();
  * @author Pablo
+ * @version 1.0
  *
  */
 public class Jugador {
@@ -57,9 +61,11 @@ public class Jugador {
 	}
 	
 	/**
-	 * Este método asignará un numero de dorsal al jugador siempre y cuando este se encuentre entre 1 y 30 inclusives. En caso contrario
-	 * se definirá el valor de -1 al numero de dorsal.
+	 * Este método asignará un numero de dorsal al jugador siempre y cuando este se encuentre entre 1 y 30 inclusives. 
+	 * En caso contrario se definirá el valor de -1 al numero de dorsal.
+	 * 
 	 * @param dorsal Le pasamos un valor int con el numero de dorsal que deseamos ponerle al jugador.
+	 * @since 1.0
 	 */
     public void ponerDorsal(int dorsal) {
     	
@@ -71,8 +77,10 @@ public class Jugador {
 
     /**
      * Este método esta definido para saber si un jugador esta expulsado.
-     * @return Nos devuelve un boolean con estado True si el jugador a recibido 2 tarjetas amarillas o bien 1 tarjeta roja. En caso contrario
+     * 
+     * @return Nos devuelve un boolean con estado True si el jugador ha recibido 2 tarjetas amarillas o bien 1 tarjeta roja. En caso contrario
      * nos devolverá un boolean con estado False.
+     * @since 1.0
      */
     public boolean estaExpulsado() {
 

@@ -2,6 +2,7 @@ package JUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import entidad.Jugador;
@@ -10,7 +11,21 @@ class TestJugador {
 	
 	private Jugador jugador1 = new Jugador();
 	
-
+	
+	@BeforeEach 
+	
+	// Antes de cada test inicializamos las propiedades a sus valores conocidos para realizar cada test.
+	
+	public void inicializacion() {
+	
+		jugador1.setNumeroTarjetasAmarillas(0);
+		jugador1.setNumeroTarjetasRojas(0);
+		jugador1.setDorsal(1);
+		
+	} 
+	
+	
+	
 	@Test
 	void testPonerDorsalEnRango1() {
 		

@@ -1,9 +1,13 @@
 package entidad;
 
-/** El objetivo de esta clase es definir el estado y funciones de un Soldado
+/** El objetivo de esta clase es definir el estado y funciones de un <b> Soldado <b>.
+ * Disponemos de los siguientes métodos:
+ * - puedeDisparar()
+ * - disparar()
  * 
  * 
- * @author Pablo
+ * @author Juan Pablo Tecchia
+ * @version 1.0
  *
  */
 public class Soldado {
@@ -49,6 +53,7 @@ public class Soldado {
 	/**
 	 * 
 	 * @return Nos devuelve un valor boolean True si el numero de balas es superior a 0, en caso contrario nos devuelve False.
+	 * @since 1.0
 	 */
 	public boolean puedeDisparar() {
 		
@@ -61,8 +66,8 @@ public class Soldado {
 	/**
 	 * Esta clase decrementará el numero de balas del soldado actual y establece la variable estaMuerto a True del soldado del parametro.
 	 * @param sol Le pasamos un objeto de la clase Soldado.
+	 * @since 1.0
 	 */
-	
 	public void disparar(Soldado sol) {
 		
 		this.numeroBalas--;
