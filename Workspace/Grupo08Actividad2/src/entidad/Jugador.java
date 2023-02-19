@@ -1,18 +1,18 @@
 package entidad;
 
 /**
- * Clase que da forma a la entidad "Jugador" que indica el <b>dorsal</b> que lleva, 
- * y el <b>número de tarjetas amarilla</b> y <b>rojas</b>.
- * <p>
- * Puede <b>ponerse un dorsal</b> e indicarnos <b>si está expulsado</b>.
- * @author diego de silva
- * @version 0.1
+ * Esta clase define el estado y métodos de la clase Jugador así como sus propiedades.
+ * Disponemos de los siguientes métodos:
+ * - ponerDorsal();
+ * - estaExpulsado();
+ * @author Pablo
+ * @version 1.0
+ *
  */
 public class Jugador {
 
 	/**
-	 * Indicador numérico del jugador
-	 * @author diego de silva
+	 * Indicador numérico del jugador 
 	 */
 	private int dorsal;
 	/**
@@ -45,10 +45,12 @@ public class Jugador {
 	}
 	
 	/**
-	 * Método que permite cambiar el dorsal al jugador por otro o el mismo siempre que sea un valor comprendido entre 1 y 30 (incluidos)
-	 * sino el valor de tu dorsal será -1
-	 * @author diego de silva
-	 * @param dorsal número al que se desea cambiar
+	 * ponerDorsal recibe un número de dorsal y si este está comprendido entre 1 y 30 asignará ese 
+     * número al dorsal del jugador. En caso de no ser un número entre 1 y 30 (inclusive) devolverá un -1.
+     * 
+     * @author Olga
+     * @param dorsal número de dorsal a asignar.
+	 * @since 1.0
 	 */
     public void ponerDorsal(int dorsal) {
     	
@@ -59,8 +61,12 @@ public class Jugador {
     }
 
     /**
-     * Método para saber si un jugador está expulsado según el <b>número de tarjetas</b> (amarillas y/o rojas) que tenga
-     * @return Devuelve <b>true</b> si tiene 2 amarillas o 1 roja. En caso contrario devuelve <b>false</b>
+     * Define si el jugador está expulsado o no en función del número de tarjetas amarillas y rojas recibidas.
+     * Como base se define como false pero si se cumple la condición de numeroTarjetasAmarillas sea 2 o si
+     * numeroTarjetasRojas sea 1 entonces se define como true y devuelve el valor de que el jugador queda expulsado.
+     * 
+     * @author Olga
+     * @return devuelve el valor de expulsado en caso de que se cumplan las condiciones.
      */
     public boolean estaExpulsado() {
 

@@ -1,10 +1,12 @@
 package entidad;
 
-/**
- * Clase que da forma a la entidad <b>Soldado</b> indicando por sus atributos si está muerta y la cantidad de balas de la que dispone.
- * y podrá utilizar los métodos de disparar a otro soldado y saber si puede disparar según sus balas.
- * @author diego de silva
- * @version 0.1
+/** El objetivo de esta clase es definir el estado y funciones de un <b> Soldado <b>.
+ * Disponemos de los siguientes métodos:
+ * - puedeDisparar()
+ * - disparar()
+ * 
+ * @author Juan Pablo Tecchia
+ * @version 1.0
  */
 public class Soldado {
 
@@ -35,11 +37,11 @@ public class Soldado {
 	}
 	
 	/**
-	 * Permite saber si este Soldado tiene balas disponibles (al menos 1)
-	 * 
-	 * @author diego de silva
-	 * @return Devuelve <b>true</b> si tenemos suficientes balas. <p>En caso contrario devuelve <b>false</b>
-	 */
+     * 
+     * Define la capacidad de disparo en función de si hay balas disponibles o no.
+     * @author Olga
+     * @return devuelve true si quedan balas, devuelve false si no quedan balas.
+     */
 	public boolean puedeDisparar() {
 		
 		if(this.numeroBalas > 0)
@@ -52,6 +54,7 @@ public class Soldado {
 	/**
 	 * Utiliza 1 bala para cambiar el estado 
 	 * del <b>Soldado</b> objetivo a <b>muerto</b> 
+	 * @author diego de silva
 	 * @param sol Soldado objetivo que va a morir
 	 */
     public void disparar(Soldado sol) {

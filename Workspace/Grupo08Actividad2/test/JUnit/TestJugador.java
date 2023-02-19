@@ -3,58 +3,68 @@ package JUnit;
 import entidad.Jugador;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestJugador {
 
+	
+	private Jugador jugador1 = new Jugador();
+	
+	@BeforeEach 
+
+    // Antes de cada test inicializamos las propiedades a sus valores conocidos para realizar cada test.
+
+    public void inicializacion() {
+		
+        jugador1 = new Jugador();
+        
+    }
+	
 	@Test
-	void testFuncPonerDorsal() {
+    void probandoDorsalError () {     
+        jugador1.ponerDorsal(33);
+        assertNotEquals(jugador1.getDorsal(),33);
+    }
+	
+	@Test
+    void probandoDorsalJugador () {
+        jugador1.ponerDorsal(25);
+        assertEquals(jugador1.getDorsal(), 25);
+    }
+	
+	@Test
+	void testFuncPonerDorsalLimites() {
 		//El test ejecutará para: (Lo que aparece entre () son la cantidad de pruebas)
 		// > Cuando el valor esté comprendido en la condición (1)
 		// > Los límites inclusivos (2)
 		// > Valores ajenos a esta condición (2)
-		// > Cuando el valor sea -1 que es al valor que cambia en caso de no entrar en al condición (1)
-		Jugador j = new Jugador();
-		
-		//Cuando el valor está comprendido entre 1 y 30
-		int expected = 12;
-		j.ponerDorsal(expected);
-		int obtained = j.getDorsal();
-		
-		assertEquals(obtained, expected);
-		
-		//Cuando el valor no está comprendido entre 1 y 30 y es superior a los límites			
-		expected = 43;		
-		j.ponerDorsal(expected);	
-		obtained = j.getDorsal();
-					
-		assertNotEquals(obtained, expected);
-		
+		// > Cuando el valor sea -1 que es al valor que cambia en caso de no entrar en al condición (1)		
 		//Cuando el valor no está comprendido entre 1 y 30 y es inferior a los límites			
-		expected = -123;		
-		j.ponerDorsal(expected);	
-		obtained = j.getDorsal();
+		int expected = -123;		
+		jugador1.ponerDorsal(expected);	
+		int obtained = jugador1.getDorsal();
 							
 		assertNotEquals(obtained, expected);
 		
 		//Cuando el valor es -1
 		expected = -1;
-		j.ponerDorsal(expected);
-		obtained = j.getDorsal();
+		jugador1.ponerDorsal(expected);
+		obtained = jugador1.getDorsal();
 		
 		assertEquals(obtained, expected);
 		
 		//Cuando el valor está en el límite izquierdo de la condición
 		expected = 1;		
-		j.ponerDorsal(expected);	
-		obtained = j.getDorsal();
+		jugador1.ponerDorsal(expected);	
+		obtained = jugador1.getDorsal();
 		
 		assertEquals(obtained, expected);
 		
 		//Cuando el valor está en el límite derecho de la condición
 		expected = 30;		
-		j.ponerDorsal(expected);	
-		obtained = j.getDorsal();
+		jugador1.ponerDorsal(expected);	
+		obtained = jugador1.getDorsal();
 		
 		assertEquals(obtained, expected);
 	}
@@ -66,28 +76,26 @@ class TestJugador {
 		// > Cuando la tarjeta tenga menos que el indicador (1)
 		// > Cuando la tarjeta tenga el valor del indicador (1)
 		// > Cuando la tarjeta tenga más que el indicador (1)
-		Jugador j = new Jugador();
-		
 		int numeroAmarillas = 0;
-		boolean obtained = j.estaExpulsado();
+		boolean obtained = jugador1.estaExpulsado();
 		
 		assertFalse(obtained);
 		
 		numeroAmarillas = 1;
-		j.setNumeroTarjetasAmarillas(numeroAmarillas);
-		obtained = j.estaExpulsado();
+		jugador1.setNumeroTarjetasAmarillas(numeroAmarillas);
+		obtained = jugador1.estaExpulsado();
 		
 		assertFalse(obtained);
 		
 		numeroAmarillas = 2;
-		j.setNumeroTarjetasAmarillas(numeroAmarillas);
-		obtained = j.estaExpulsado();
+		jugador1.setNumeroTarjetasAmarillas(numeroAmarillas);
+		obtained = jugador1.estaExpulsado();
 		
 		assertTrue(obtained);		
 		
 		numeroAmarillas = 3;
-		j.setNumeroTarjetasAmarillas(numeroAmarillas);
-		obtained = j.estaExpulsado();
+		jugador1.setNumeroTarjetasAmarillas(numeroAmarillas);
+		obtained = jugador1.estaExpulsado();
 		
 		assertFalse(obtained);		
 	}
@@ -98,29 +106,27 @@ class TestJugador {
 		// > En momento de instancia debe tener 0 (1)
 		// > Cuando la tarjeta tenga menos que el indicador (1)
 		// > Cuando la tarjeta tenga el valor del indicador (1)
-		// > Cuando la tarjeta tenga más que el indicador (1)
-		Jugador j = new Jugador();
-				
+		// > Cuando la tarjeta tenga más que el indicador (1)	
 		int numeroRojas = 0;
-		boolean obtained = j.estaExpulsado();
+		boolean obtained = jugador1.estaExpulsado();
 				
 		assertFalse(obtained);
 				
 		numeroRojas = 0;
-		j.setNumeroTarjetasRojas(numeroRojas);
-		obtained = j.estaExpulsado();
+		jugador1.setNumeroTarjetasRojas(numeroRojas);
+		obtained = jugador1.estaExpulsado();
 				
 		assertFalse(obtained);
 				
 		numeroRojas = 1;
-		j.setNumeroTarjetasRojas(numeroRojas);
-		obtained = j.estaExpulsado();
+		jugador1.setNumeroTarjetasRojas(numeroRojas);
+		obtained = jugador1.estaExpulsado();
 			
 		assertTrue(obtained);		
 				
 		numeroRojas = 3;
-		j.setNumeroTarjetasRojas(numeroRojas);
-		obtained = j.estaExpulsado();
+		jugador1.setNumeroTarjetasRojas(numeroRojas);
+		obtained = jugador1.estaExpulsado();
 				
 		assertFalse(obtained);	
 	}
@@ -134,27 +140,25 @@ class TestJugador {
 		// > Cuando tienes 3 amarillas y 1 roja
 		// > Cuando tienes 2 amarillas y 1 roja
 		// > Cuando tienes 1 amarilla y 3 rojas
-		Jugador j = new Jugador();
-		
-		j.setNumeroTarjetasAmarillas(1); 
-		j.setNumeroTarjetasRojas(1);
+		jugador1.setNumeroTarjetasAmarillas(1); 
+		jugador1.setNumeroTarjetasRojas(1);
 				
-		assertTrue(j.estaExpulsado());
+		assertTrue(jugador1.estaExpulsado());
 		
-		j.setNumeroTarjetasAmarillas(3);
-		j.setNumeroTarjetasRojas(1);
+		jugador1.setNumeroTarjetasAmarillas(3);
+		jugador1.setNumeroTarjetasRojas(1);
 		
-		assertTrue(j.estaExpulsado());
+		assertTrue(jugador1.estaExpulsado());
 		
-		j.setNumeroTarjetasAmarillas(2);
-		j.setNumeroTarjetasRojas(1);
+		jugador1.setNumeroTarjetasAmarillas(2);
+		jugador1.setNumeroTarjetasRojas(1);
 		
-		assertTrue(j.estaExpulsado());
+		assertTrue(jugador1.estaExpulsado());
 		
-		j.setNumeroTarjetasAmarillas(1);
-		j.setNumeroTarjetasRojas(3);
+		jugador1.setNumeroTarjetasAmarillas(1);
+		jugador1.setNumeroTarjetasRojas(3);
 		
-		assertFalse(j.estaExpulsado());	
+		assertFalse(jugador1.estaExpulsado());	
 	}
 
 }

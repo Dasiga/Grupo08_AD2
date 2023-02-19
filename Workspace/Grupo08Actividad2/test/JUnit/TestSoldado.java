@@ -3,43 +3,67 @@ package JUnit;
 import entidad.Soldado;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestSoldado {
 	
-	@Test
-	void testFuncPuedeDisparar() {
-		
-		//int numero de balas tiene 2 resultados: true y false
-		//además, la condición es una comparativa como límite en 0 lo que para el resultado
-		//Por lo que haremos 1 en momento de creación, 1 con balas > 0 y otra con balas <= 0
- 		Soldado sol = new Soldado();
-		
-		assertFalse(sol.puedeDisparar());	//En momento de creación no tiene Balas
-		
-		//Cambiamos el número de balas para comprobar los estados de la condición.
-		sol.setNumeroBalas(1);
-		assertTrue(sol.puedeDisparar());	//true
-		
-		sol.setNumeroBalas(0);				
-		assertFalse(sol.puedeDisparar());	//false
-		
-		sol.setNumeroBalas(-1);
-		assertFalse(sol.puedeDisparar());	//false
-	}
+	// Declaramos varias entidades de soldado
+
+    private Soldado soldado1 = new Soldado();
+    private Soldado soldado2 = new Soldado();
+    private Soldado soldado3 = new Soldado();
+    private Soldado soldado4 = new Soldado();
+
+    @BeforeEach
+    
+    // Inicializamos las propiedades a sus valores conocidos para realizar cada test.
+    
+    public void inicializacion() {
+
+        soldado1.setEstaMuerto(false);
+        soldado2.setEstaMuerto(false);
+        soldado3.setEstaMuerto(false);
+        soldado4.setEstaMuerto(false);
+
+        soldado1.setNumeroBalas(0);
+        soldado2.setNumeroBalas(0);
+        soldado3.setNumeroBalas(0);
+        soldado4.setNumeroBalas(0);
+    }
+	
+    @Test
+    void testPuedeDisparar1() {
+        soldado1.setNumeroBalas(15);
+        assertTrue(soldado1.puedeDisparar());
+    }
+
+    @Test
+    void testPuedeDisparar2() {
+        soldado1.setNumeroBalas(1);
+        assertTrue(soldado1.puedeDisparar());
+    }
+
+    @Test
+    void testPuedeDisparar4() {
+        soldado4.setNumeroBalas(0);
+        assertFalse(soldado4.puedeDisparar());
+    }
+
+    @Test
+    void testPuedeDisparar5() {
+        soldado3.setNumeroBalas(-5);
+        assertFalse(soldado3.puedeDisparar());
+    }
+	
 
 	@Test
 	void testFuncDisparar() {
-		//Necesitamos 2 soldados para esta funcion
-		//La función contiene una operación int y otra boolean asique se necesitan 2 Aserciones
-		Soldado mySol = new Soldado();		//Soldado que va a disparar
-		Soldado targetSol = new Soldado();	//Soldado que va a recibir el disparo
-		
 		int currentBalas = -1;	//Balas que se quedan al terminar de disparar
 		
-		mySol.disparar(targetSol);
+		soldado1.disparar(soldado2);
 		
-		assertTrue(targetSol.isEstaMuerto());				//true
-		assertEquals(currentBalas, mySol.getNumeroBalas());	//true
+		assertTrue(soldado2.isEstaMuerto());				//true
+		assertEquals(currentBalas, soldado1.getNumeroBalas());	//true
 	}
 }
