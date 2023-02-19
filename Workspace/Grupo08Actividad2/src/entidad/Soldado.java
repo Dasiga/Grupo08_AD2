@@ -6,7 +6,13 @@ package entidad;
  */
 public class Soldado {
 
+	/**
+	 * determina si el soldado está muerto.
+	 */
 	private boolean estaMuerto;
+	/**
+	 * número de balas del soldado.
+	 */
 	private int numeroBalas;
 	
 	
@@ -25,7 +31,7 @@ public class Soldado {
 	
 	/**
 	 * En este método el soldado solo puede disparar si balas > 0.
-	 * @return si tiene balas, true.
+	 * @return si tiene balas, true. De lo contrario false.
 	 */
 	public boolean puedeDisparar() {
 		
@@ -34,7 +40,10 @@ public class Soldado {
 		
 		return false;		
 	}
-	
+	/**
+	 * Cambia el estado del soldado a muerto si true.
+	 * @param sol
+	 */
 	public void disparar(Soldado sol) {
 		
 		this.numeroBalas--;

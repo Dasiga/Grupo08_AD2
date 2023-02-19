@@ -1,9 +1,17 @@
 package entidad;
 
 public class Jugador {
-
+/**
+ * es el número del jugador
+ */
 	private int dorsal;
+	/**
+	 * el número de tarjetas amarillas
+	 */
 	private int numeroTarjetasAmarillas;
+	/**
+	 * el número de tarjetas rojas
+	 */
 	private int numeroTarjetasRojas;
 	
 	
@@ -26,13 +34,13 @@ public class Jugador {
 		this.numeroTarjetasRojas = numeroTarjetasRojas;
 	}
 	/**
-	 * Este método hace que el jugador solo puede tener un dorsal del 1 al 30.
+	 * Este método hace que el jugador solo puede tener un dorsal del 1 al 30, de lo contrario devuelve un -1.
 	 * @param dorsal
 	 */
 	
     public void ponerDorsal(int dorsal) {
     	
-        if(dorsal >= 1 && dorsal <= 30)                     
+       if(dorsal >= 1 && dorsal <= 30)                     
         	this.dorsal = dorsal;
         else               
         	this.dorsal = -1;
@@ -40,7 +48,7 @@ public class Jugador {
 
 /**
  * Si el jugador tiene una segunda amarilla o una roja este sería expulsado
- * @return expulsado true/false.
+ * @return expulsado true/false dependiendo si se cumple la condición o no.
  */
     public boolean estaExpulsado() {
 
