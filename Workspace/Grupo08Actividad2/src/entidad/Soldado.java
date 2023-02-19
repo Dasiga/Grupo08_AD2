@@ -49,13 +49,7 @@ public class Soldado {
 		
 		return false;		
 	}
-	
-	public void disparar(Soldado sol) {
-		
-		this.numeroBalas--;
-		
-		sol.estaMuerto = true;
-	}
+
 	
 	/**
 	 * Utiliza 1 bala para cambiar el estado 

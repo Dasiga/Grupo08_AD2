@@ -7,7 +7,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestJugador {
-
 	
 	private Jugador jugador1 = new Jugador();
 	
