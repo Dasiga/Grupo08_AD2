@@ -25,7 +25,10 @@ public class Jugador {
 	public void setNumeroTarjetasRojas(int numeroTarjetasRojas) {
 		this.numeroTarjetasRojas = numeroTarjetasRojas;
 	}
-	
+	/**
+	 * Este método hace que el jugador solo puede tener un dorsal del 1 al 30.
+	 * @param dorsal
+	 */
 	
     public void ponerDorsal(int dorsal) {
     	
@@ -35,7 +38,10 @@ public class Jugador {
         	this.dorsal = -1;
     }
 
-
+/**
+ * Si el jugador tiene una segunda amarilla o una roja este sería expulsado
+ * @return expulsado true/false.
+ */
     public boolean estaExpulsado() {
 
         boolean expulsado = false;                                                  

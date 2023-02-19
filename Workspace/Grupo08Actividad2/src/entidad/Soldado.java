@@ -1,5 +1,9 @@
 package entidad;
-
+/**
+ * Esta clase representa a un soldado en batalla
+ * @author Danilo
+ *
+ */
 public class Soldado {
 
 	private boolean estaMuerto;
@@ -19,7 +23,10 @@ public class Soldado {
 		this.numeroBalas = numeroBalas;
 	}
 	
-	
+	/**
+	 * En este método el soldado solo puede disparar si balas > 0.
+	 * @return si tiene balas, true.
+	 */
 	public boolean puedeDisparar() {
 		
 		if(this.numeroBalas > 0)
